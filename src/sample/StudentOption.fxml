@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton layoutX="78.0" layoutY="50.0" prefHeight="112.0" prefWidth="211.0" style="-fx-background-color: D83A56;" text="Student Information" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="344.0" layoutY="50.0" prefHeight="112.0" prefWidth="211.0" style="-fx-background-color: D97642;" text="Student List" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="78.0" layoutY="254.0" prefHeight="112.0" prefWidth="211.0" style="-fx-background-color: F05454;" text="Library Management" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="344.0" layoutY="254.0" prefHeight="112.0" prefWidth="211.0" style="-fx-background-color: AA2B1D;" text="Courses &amp; Exams" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>

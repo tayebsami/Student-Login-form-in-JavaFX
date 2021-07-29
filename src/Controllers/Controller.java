@@ -1,4 +1,4 @@
-package sample;
+package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,8 +18,7 @@ import java.sql.*;
 public class Controller {
 @FXML private TextField username;
 @FXML private PasswordField password;
-@FXML private ImageView image;
-@FXML private Button Login;
+    @FXML private Button Login;
 @FXML private Button signup;
 @FXML private RadioButton male;
 @FXML private ToggleGroup gender;
@@ -33,7 +32,7 @@ public class Controller {
 @FXML private Label logintTryLabel;
 
     public void ChangeSceneSignUp(ActionEvent event) throws IOException {
-        Parent signupRoot = FXMLLoader.load(getClass().getResource("SingUp.fxml"));
+        Parent signupRoot = FXMLLoader.load(getClass().getResource("/sample/SingUp.fxml"));
         Scene signupScene = new Scene(signupRoot);
         //this line gets the stage information
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -60,7 +59,7 @@ public class Controller {
         }
     }
     public void RetrunSceneLogin(ActionEvent eventReturn) throws IOException {
-        Parent ReturnLoginRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent ReturnLoginRoot = FXMLLoader.load(getClass().getResource("/sample/sample.fxml"));
         Scene RetrunLoginScene = new Scene(ReturnLoginRoot);
 
         //this line gets the stage information
@@ -97,8 +96,16 @@ public class Controller {
             e.printStackTrace();
         }
     }
-    public void loginButton(ActionEvent e){
-        if(username.getText().isEmpty() == false && password.getText().isEmpty() == false){
+    public void StudentScene(ActionEvent e) throws IOException {
+        Parent StudentRoot = FXMLLoader.load(getClass().getResource("/sample/StudentOption.fxml"));
+        Scene studentOptionScene = new Scene(StudentRoot);
+        //this line gets the stage information
+        Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        window.setScene(studentOptionScene);
+        window.show();
+    }
+    public void loginButton(ActionEvent e) throws IOException {
+        if(username.getText().isEmpty() == false && password.getText().isEmpty() == false) {
             validateLogin();
         }else{
             logintTryLabel.setText("Please enter your Username and Password!");

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="441.0" prefWidth="475.0" style="-fx-background-color: EAAC7F;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="441.0" prefWidth="475.0" style="-fx-background-color: EAAC7F;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
    <children>
       <TextField fx:id="btnUser" layoutX="158.0" layoutY="133.0" prefHeight="30.0" prefWidth="197.0" promptText="Enter Your Username">
          <font>
