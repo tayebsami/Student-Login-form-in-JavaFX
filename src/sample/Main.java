@@ -16,10 +16,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Image image = new Image("/Images/student.png");
+     //   root.getStylesheets().add(getClass().getResource("Css.css").toExternalForm());
         primaryStage.getIcons().add(image);
         primaryStage.setTitle("Student Login");
         primaryStage.setScene(new Scene(root));
-        root.getStylesheets().add(getClass().getResource("Css.css").toExternalForm());
+
         primaryStage.show();
     }
 

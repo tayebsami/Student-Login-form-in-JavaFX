@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import DBConnection.DatabaseConnection;
+import sample.Main;
 
 import java.io.IOException;
 import java.sql.*;
@@ -96,9 +97,10 @@ public class Controller {
             e.printStackTrace();
         }
     }
-    public void StudentScene(ActionEvent e) throws IOException {
+    public  void StudentScene(ActionEvent e) throws IOException {
         Parent StudentRoot = FXMLLoader.load(getClass().getResource("/sample/StudentOption.fxml"));
         Scene studentOptionScene = new Scene(StudentRoot);
+        StudentRoot.getStylesheets().add(getClass().getResource("/sample/Css.css").toExternalForm());
         //this line gets the stage information
         Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
         window.setScene(studentOptionScene);
@@ -106,12 +108,13 @@ public class Controller {
     }
     public void loginButton(ActionEvent e) throws IOException {
         if(username.getText().isEmpty() == false && password.getText().isEmpty() == false) {
-            validateLogin();
+            validateLogin(e);
+
         }else{
             logintTryLabel.setText("Please enter your Username and Password!");
         }
     }
-    public void validateLogin(){
+    public void validateLogin(ActionEvent e0){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
@@ -124,6 +127,7 @@ public class Controller {
                 int i = 1;
                 if (queryResult.getInt(i) == 1) {
                     logintTryLabel.setText("Congratulation!");
+                    StudentScene(e0);
                 }else{
                     logintTryLabel.setText("Invalide login. Please Try Again!");
                 }
